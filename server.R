@@ -93,7 +93,7 @@ shinyServer(function(input, output, session) {
     f_var <- mean_and_var$var
     f_lwr <- f_mean - diag(f_var)
     f_upr <- f_mean + diag(f_var)
-    plot_data <- data.frame(cbind(X_test, f_mean, f_lwr, f_upr))
+    plot_data <- data.frame(cbind(DOMAIN, f_mean, f_lwr, f_upr))
     colnames(plot_data) <- c('X_test', 'f_mean', 'lwr', 'upr')
     
     return(plot_data)

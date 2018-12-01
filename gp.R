@@ -6,7 +6,7 @@ gp <- function(kernel_fn) {
     
     predict_f = function(X, y, Xnew) {
       K <- kernel_fn(X, X)
-      Kinv <- solve(K)
+      Kinv <- solve(jitter(K, 1e-6))
       Ks <- kernel_fn(X, Xnew)
       Kss <- kernel_fn(Xnew, Xnew)
       
